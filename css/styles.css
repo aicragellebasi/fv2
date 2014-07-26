@@ -6242,48 +6242,66 @@ button.close {
   width: 50%;
 }
 /* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-#timeline[data-columns]::before {
-  content: '1 .column';
-}
+/* No media query since this is the default in Bootstrap 
+
+    #timeline[data-columns]::before {
+        content: '1 .column';
+    }*/
+/* iPhone */
 @media (max-width: 767px) {
+  #timeline[data-columns]::before {
+    content: '1 .column';
+  }
   .video-container {
     border: 3px solid white;
   }
 }
+/* iPads (mini and 5 --- ) portraits */
 @media (min-width: 768px) and (max-width: 991px) {
+  #timeline[data-columns]::before {
+    content: '2 .column.size-1of2';
+  }
   .video-container {
     border: 3px solid black;
   }
 }
+/* iPads (mini and 5 --- ) landscapes */
 @media (min-width: 992px) and (max-width: 1199px) {
+  #timeline[data-columns]::before {
+    content: '3 .column.size-1of3';
+  }
   .video-container {
     border: 3px solid yellow;
   }
 }
-@media (min-width: 1200px) {
-  .video-container {
-    border: 3px solid green;
-  }
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  #timeline[data-columns]::before {
-    content: '2 .column.size-1of2';
-  }
-}
-/* Medium devices (desktops, 992px and up)*/
-@media (min-width: 992px) {
-  #timeline[data-columns]::before {
-    content: '3 .column.size-1of3';
-  }
-}
-/* Large devices (large desktops, 1200px and up) */
+/* larger screens */
 @media (min-width: 1200px) {
   #timeline[data-columns]::before {
     content: '4 .column.size-1of4';
   }
+  .video-container {
+    border: 3px solid green;
+  }
 }
+/* Small devices (tablets, 768px and up) 
+@media (min-width: @screen-sm-min) { 
+    #timeline[data-columns]::before {
+        content: '2 .column.size-1of2';
+    }
+}*/
+/* Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) { 
+    #timeline[data-columns]::before {
+        content: '3 .column.size-1of3';
+        //content: '2 .column.size-1of2';
+    }
+}*/
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) { 
+    #timeline[data-columns]::before {
+        content: '4 .column.size-1of4';
+    }
+}*/
 /* Configurate salvattore with media queries 
 @media screen and (max-width: 450px) {
     #timeline[data-columns]::before {
@@ -6308,12 +6326,31 @@ button.close {
         content: '4 .column.size-1of4';
     }
 }
+
+
+.video-container{
+    width: 100%;
+    //border: 1px solid red;
+}
+
+.video-container iframe{
+    width: 100%;
+    //border: 1px solid green;
+}
+
 */
 .video-container {
+  position: relative;
   width: 100%;
+  padding-bottom: 65%;
+  float: left;
+  height: 0;
 }
 .video-container iframe {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
 }
 * {
   outline: none;
