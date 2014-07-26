@@ -1,0 +1,115 @@
+/*
+   Spezific styling for salvattore
+   Feel free to edit it as you like
+   More info at http://salvattore.com
+ */
+
+/* Base styles */
+.column {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.size-1of4 {
+    width: 25%;
+}
+.size-1of3 {
+    width: 33.333%;
+}
+.size-1of2 {
+    width: 50%;
+}
+
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+    #timeline[data-columns]::before {
+        content: '1 .column';
+    }
+
+@media (max-width: @screen-xs-max) { //Nothing, it is set by default at 1 column -- see just above 
+    .video-container{
+        border: 3px solid white;
+    }
+}
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+    .video-container{
+        border: 3px solid black;
+    }
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+    .video-container{
+        border: 3px solid yellow;
+    }
+}
+@media (min-width: @screen-lg-min) 
+{ 
+    .video-container{
+        border: 3px solid green;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) { 
+    #timeline[data-columns]::before {
+        content: '2 .column.size-1of2';
+    }
+}
+
+/* Medium devices (desktops, 992px and up)*/
+@media (min-width: @screen-md-min) { 
+    #timeline[data-columns]::before {
+        content: '3 .column.size-1of3';
+        //content: '2 .column.size-1of2';
+    }
+}
+ 
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { 
+    #timeline[data-columns]::before {
+        content: '4 .column.size-1of4';
+    }
+}
+
+/* Configurate salvattore with media queries 
+@media screen and (max-width: 450px) {
+    #timeline[data-columns]::before {
+        content: '1 .column';
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 700px) {
+    #timeline[data-columns]::before {
+        content: '2 .column.size-1of2';
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 850px) {
+    #timeline[data-columns]::before {
+        content: '3 .column.size-1of3';
+    }
+}
+
+@media screen and (min-width: 851px) {
+    #timeline[data-columns]::before {
+        content: '4 .column.size-1of4';
+    }
+}
+*/
+
+.video-container{
+    width: 100%;
+    //border: 1px solid red;
+}
+
+.video-container iframe{
+    width: 100%;
+    //border: 1px solid green;
+}
+
+
+
+
